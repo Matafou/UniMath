@@ -3532,8 +3532,9 @@ Lemma Dcuts_half_le :
 Proof.
   intros x.
   intros r Hr.
-  apply is_Dcuts_bot with (1 := Hr).
-  now apply plusNonnegativeRationals_le_l.
+  eapply is_Dcuts_bot.
+  - apply Hr.
+  - now apply plusNonnegativeRationals_le_l.
 Qed.
 
 Lemma isdistr_Dcuts_half_plus :
